@@ -8,4 +8,5 @@ public class LoginObjects {
     public static By loginButton = By.id("SubmitLogin");
     public static By textField = By.cssSelector("a.account");
     public static By errorMessage = By.xpath("//*[@id='center_column']/div[1]/ol/li");
+    public static By goLoginPage = By.cssSelector("a.login");
 }

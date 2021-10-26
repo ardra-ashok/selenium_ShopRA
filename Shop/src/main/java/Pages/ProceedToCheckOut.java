@@ -3,14 +3,15 @@ package Pages;
 import DriverHandler.Helpers;
 import Objects.ProceedToCheckOutObjects;
 import Exceptions.ParentException;
-import org.openqa.selenium.WebDriver;
+
 
 
 public class ProceedToCheckOut extends Helpers {
-    public ProceedToCheckOut(WebDriver driver) {
-        super(driver);
 
+
+    public ProceedToCheckOut() {
     }
+
     public void proceedCheckOut() throws ParentException {
 
         actionMoveClick(ProceedToCheckOutObjects.shoppingCart);

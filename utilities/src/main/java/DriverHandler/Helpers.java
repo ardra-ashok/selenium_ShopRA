@@ -4,10 +4,8 @@ package DriverHandler;
 
 import Exceptions.APElementNotClickable;
 import Exceptions.APElementNotSelectable;
-import Pages.LoginPage;
-import Pages.ProceedToCheckOut;
-import Pages.SearchPage;
-import Pages.ShopPage;
+
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -27,30 +25,8 @@ public class Helpers {
     private static WebDriver driver;
 
 
-    public Helpers(WebDriver driver) {
-        this.driver = driver;
-    }
+    public Helpers() {
 
-    public static void navigate(){
-        getDriver().get(HelperObjects.baseUrl);
-    }
-    public static void login() throws ParentException{
-         getDriver().findElement(HelperObjects.loginButton).click();
-         LoginPage testLogin = new LoginPage(getDriver());
-         testLogin.login(HelperObjects.email, HelperObjects.password);
-    }
-    public static void shop() throws ParentException{
-        ShopPage doShopping = new ShopPage(getDriver());
-        doShopping.shop(HelperObjects.itemsNeeded);
-    }
-
-    public static void proceedCheckout() throws ParentException{
-        ProceedToCheckOut proceed = new ProceedToCheckOut(getDriver());
-        proceed.proceedCheckOut();
-    }
-    public static SearchPage searchInit() throws ParentException{
-        SearchPage search = new SearchPage(getDriver());
-        return search;
     }
 
 
@@ -161,6 +137,8 @@ public class Helpers {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        driver.get(HelperObjects.baseUrl);
+
     }
 
     public static void tearDown() {

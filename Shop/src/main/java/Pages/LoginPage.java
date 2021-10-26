@@ -4,16 +4,17 @@ package Pages;
 import DriverHandler.Helpers;
 import Exceptions.ParentException;
 import Objects.LoginObjects;
-import org.openqa.selenium.WebDriver;
+
 
 
 public class LoginPage extends Helpers {
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage() {
+        super();
     }
 
-    public void login(String email,String password) throws ParentException {
+    public void login(String email, String password) throws ParentException {
+        click(LoginObjects.goLoginPage);
         type(email, LoginObjects.emailField);
         type(password, LoginObjects.passwordField);
         click(LoginObjects.loginButton);

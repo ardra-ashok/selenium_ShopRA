@@ -5,20 +5,20 @@ import DriverHandler.Helpers;
 import Exceptions.ParentException;
 import Objects.SearchObjects;
 import Objects.ShopObjects;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class ShopPage extends Helpers {
-    public ShopPage(WebDriver driver) {
-        super(driver);
+
+
+    public ShopPage() {
     }
 
     public void shop(String[] itemsNeeded) throws ParentException {
 
-        SearchPage search = Helpers.searchInit();
+        SearchPage search = new SearchPage();
         click(ShopObjects.linkTextWomen);
         List<String> itemsNeededList = Arrays.asList(itemsNeeded);
         for(String itemNeeded: itemsNeededList) {
@@ -40,7 +40,7 @@ public class ShopPage extends Helpers {
                         clear(SearchObjects.searchField);
                     }
                 }
-               else {continue;}
+
             }
         }
 
