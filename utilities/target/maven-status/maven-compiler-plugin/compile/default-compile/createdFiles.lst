@@ -1,7 +1,9 @@
+Handler\Helpers.class
 Exceptions\APElementNotSelectable.class
 Exceptions\APNullPointerException.class
-DriverHandler\HelperObjects.class
-DriverHandler\Helpers.class
+Handler\HelperObjects.class
 Exceptions\APElementNotFound.class
 Exceptions\APElementNotClickable.class
+Handler\FileHandler.class
+FileHandler\FileReader.class
 Exceptions\ParentException.class
