@@ -8,13 +8,22 @@ public class ParentException extends Exception{
 
     public ParentException() {}
 
+
     public ParentException(Exception e) {
-        super("Operation failed",e);
-        errMessage = "Operation failed";
         error = e;
-
-
+    }
+    public ParentException(String message){
+        errMessage = message;
 
     }
+    public void log(){
+        LogHandler.log(errMessage);
+    }
+
+
+
+
+
+
 
 }

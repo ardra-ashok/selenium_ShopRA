@@ -1,9 +1,11 @@
 Handler\Helpers.class
 Exceptions\APElementNotSelectable.class
 Exceptions\APNullPointerException.class
-Handler\HelperObjects.class
+Exceptions\APJavascriptException.class
+Exceptions\APFileException.class
 Exceptions\APElementNotFound.class
 Exceptions\APElementNotClickable.class
 Handler\FileHandler.class
-FileHandler\FileReader.class
+Exceptions\APIOException.class
+Handler\LogHandler.class
 Exceptions\ParentException.class

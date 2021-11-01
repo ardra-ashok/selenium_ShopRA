@@ -6,6 +6,8 @@ import Exceptions.ParentException;
 
 import Handler.LogHandler;
 import Service.Services;
+
+import java.io.IOException;
 //shop module - service class (page classes)- refer framework architecture
 //couple of more services inside utilities(read to file,write to file)-file handler(independent classes)
 // -  report handling (independent class) public static
@@ -13,15 +15,23 @@ import Service.Services;
 // testModule - cucumber
 
 public class Main  {
-    public static void main(String[] args){
+    public static void main(String[] args) throws ParentException {
 
-        String[] itemsNeeded = {"Faded Short Sleeve T-shirts","Blouse"};
-        Services shopService = new Services();
+            String fileName = LogHandler.initializeReport();
+            String[] itemsNeeded = {"Faded Short Sleeve T-shirts","Blouse"};
+            String email = "test1249@test.com";
+            String password ="PKR@PKR";
+            Services shopService = new Services();
+            shopService.login(email,password);
 
-        // shopService.login();
-        shopService.shop(itemsNeeded);
-        shopService.proceedToCheckOut();
 
+            // shopService.shop(itemsNeeded);
+
+
+             // shopService.proceedToCheckOut();
+
+
+        LogHandler.readReport(fileName);
         Helpers.tearDown();
 
     }

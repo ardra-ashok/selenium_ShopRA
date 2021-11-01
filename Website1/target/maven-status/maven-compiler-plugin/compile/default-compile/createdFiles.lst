@@ -1,9 +1,11 @@
 Pages\ShopPage.class
 Service\Services.class
+Objects\HomeObjects.class
 Objects\SearchObjects.class
 Objects\LoginObjects.class
 Objects\ProceedToCheckOutObjects.class
 Pages\LoginPage.class
 Objects\ShopObjects.class
+Pages\HomePage.class
 Pages\SearchPage.class
 Pages\ProceedToCheckOut.class

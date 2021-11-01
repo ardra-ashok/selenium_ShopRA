@@ -1,14 +1,15 @@
 package Exceptions;
 
 
-import org.openqa.selenium.By;
+
 
 public class APIOException extends ParentException{
-
-        public APIOException(By locator, Throwable e) {
-            errMessage = locator.toString() + "reference found was not clickable";
+        public APIOException(String message, Throwable e) {
+            errMessage =  message;
             error = e;
         }
+
+
 
     }
 

@@ -1,24 +1,26 @@
 package Handler;
 
-import Exceptions.APElementNotClickable;
-import Exceptions.APElementNotSelectable;
+import Exceptions.*;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
 import java.util.List;
-import java.util.NoSuchElementException;
+import org.openqa.selenium.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 
-import Exceptions.APElementNotFound;
-import Exceptions.ParentException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class Helpers {
+
+
+
     private static WebDriver driver;
     public Helpers() {
     }
@@ -31,14 +33,21 @@ public class Helpers {
         }
     }
     public static WebElement find(By locator) throws ParentException {
-        try{
+        WebElement we = null;
+        try {
 
-            return getDriver().findElement(locator);
-        } catch (NoSuchElementException e){
-            System.out.println("i am here");
-            throw new APElementNotFound(locator,new Exception("no element found"));
+            if (getDriver().findElement(locator).isDisplayed()) {
+                we =  getDriver().findElement(locator);
+            }
+        } catch (NoSuchElementException e) {
+            throw new APElementNotFound(locator,e);
+        }catch (NullPointerException  e){
+            throw new APNullPointerException(locator,e);
         }
+        return we;
     }
+
+
     public static void type(String text, By locator) throws ParentException {
         try{
             find(locator).clear();
@@ -49,13 +58,15 @@ public class Helpers {
 
     }
     public static void click(By locator) throws ParentException {
+
         try{
             find(locator).click();
         }catch (NoSuchElementException e){
-
             throw new APElementNotFound(locator, e);
         } catch (ElementNotInteractableException e){
             throw new APElementNotClickable(locator, e);
+        }catch(NullPointerException e){
+            throw new APNullPointerException(locator, e);
         }
 
     }
@@ -69,10 +80,7 @@ public class Helpers {
     }
     // add exception
     public static String getUrl() {
-
             return getDriver().getCurrentUrl();
-
-
     }
 
     public static Boolean checkEquality(String text1,String text2) {
@@ -113,26 +121,28 @@ public class Helpers {
     }
     public static void JsExecutorClick(By locator) throws ParentException{
         try{
-            JavascriptExecutor executor = (JavascriptExecutor)getDriver();
             WebElement element = find(locator);
+            JavascriptExecutor executor = (JavascriptExecutor)getDriver();
             executor.executeScript("arguments[0].click();", element);
         }catch(NoSuchElementException e){
             throw new APElementNotFound(locator,e);
+        } catch(JavascriptException e){
+            throw new APJavascriptException(locator,e);
         }
     }
 
     private static WebDriver getDriver() {
         if (driver == null)
-            init();
+                init();
         return driver;
     }
 
     public static void  init() {
+
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\61491\\sdettesting\\Softwares\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get(HelperObjects.baseUrl);
 
     }
 
@@ -140,5 +150,7 @@ public class Helpers {
         driver.close();
     }
 
-
+    public static void navigateToUrl(String url){
+        getDriver().get(url);
+    }
 }
