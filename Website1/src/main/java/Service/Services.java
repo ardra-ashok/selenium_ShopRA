@@ -71,4 +71,8 @@ public class Services {
     public void clickOnLogout() throws ParentException{
         testLogin.logout();
     }
+
+    public void tearDown() throws InterruptedException {
+        testLogin.tearDown();
+    }
 }

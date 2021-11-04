@@ -7,7 +7,7 @@ import Handler.Helpers;
 
 public class HomePage {
 
-    public static void goHomePage() throws ParentException {
+    public static void goHomePage()  {
         Helpers.navigateToUrl(HomeObjects.baseUrl);
     }
     public static void clickOnSignInLink() throws ParentException {

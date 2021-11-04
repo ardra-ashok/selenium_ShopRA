@@ -15,14 +15,14 @@ import java.io.IOException;
 // testModule - cucumber
 
 public class Main  {
-    public static void main(String[] args) throws ParentException {
+    public static void main(String[] args) throws ParentException, InterruptedException {
 
             String fileName = LogHandler.initializeReport();
             String[] itemsNeeded = {"Faded Short Sleeve T-shirts","Blouse"};
             String email = "test1249@test.com";
             String password ="PKR@PKR";
             Services shopService = new Services();
-            shopService.login(email,password);
+           // shopService.login(email,password);
 
 
             // shopService.shop(itemsNeeded);

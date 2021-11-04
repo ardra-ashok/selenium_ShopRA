@@ -1,4 +1,7 @@
 Runners\Run.class
 StepDefinitions\Credentials.class
-StepDefinition\Steps.class
+Runners\TestNGRunner.class
 StepDefinitions\Steps.class
+Runners\dataProviderRepo.class
+Runners\testNGTrial.class
+StepDefinitions\Steps1.class

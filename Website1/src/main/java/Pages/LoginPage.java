@@ -45,4 +45,8 @@ public class LoginPage  {
     public static void logout() throws ParentException{
         Helpers.click(LoginObjects.logoutButton);
     }
+
+    public static void tearDown() throws InterruptedException {
+        Helpers.tearDown();
+    }
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default Suite" duration-ms="43188" started-at="2021-11-03T13:14:17 AEDT" finished-at="2021-11-03T13:15:00 AEDT">
+    <groups>
+    </groups>
+    <test name="seleniumShop" duration-ms="43188" started-at="2021-11-03T13:14:17 AEDT" finished-at="2021-11-03T13:15:00 AEDT">
+      <class name="Runners.Run">
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:Runners.Run@5c5a1b69]" name="loginTest" duration-ms="30323" started-at="2021-11-03T13:14:17 AEDT" data-provider="LogData" finished-at="2021-11-03T13:14:48 AEDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test1249@test.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[PKR@PKR]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:Runners.Run@5c5a1b69]" name="loginTest" duration-ms="12299" started-at="2021-11-03T13:14:48 AEDT" data-provider="LogData" finished-at="2021-11-03T13:15:00 AEDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testemailardra@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[PKR@PKR]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="logOut()[pri:0, instance:Runners.Run@5c5a1b69]" name="logOut" is-config="true" duration-ms="369" started-at="2021-11-03T13:15:00 AEDT" finished-at="2021-11-03T13:15:00 AEDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+      </class> <!-- Runners.Run -->
+    </test> <!-- seleniumShop -->
+  </suite> <!-- Default Suite -->
+</testng-results>
