@@ -5,10 +5,12 @@ import Exceptions.ParentException;
 import Service.Services;
 
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import cucumber.api.DataTable;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+
 
 
 import java.util.List;
@@ -33,10 +35,11 @@ public class Steps {
     }
     @When("^the user enters valid Credentials to login$")
     public void entersValidCredentials(DataTable userCredentials) throws ParentException {
+        System.out.println("i am here");
             List<Map<String, String>> data = userCredentials.asMaps(String.class, String.class);
             service.enterLoginCredentials(data.get(0).get("email"), data.get(0).get("password"));
-            // list of maps
-//        for(Map<String,String> data: usercredentials.asMaps(String.class,String.class)){
+//            // list of maps
+//        for(Map<String,String> data: userCredentials.asMaps(String.class,String.class)){
 //            service.enterLoginCredentials(data.get("email"),data.get("password"));
 //        }
     }
@@ -56,10 +59,10 @@ public class Steps {
         System.out.println("i am running cucumber");
     }
 
-    @Then("^user then closes the browser$")
-    public void tearDown() throws InterruptedException {
-        service.tearDown();
-    }
+//    @Then("^user then closes the browser$")
+//    public void tearDown() throws InterruptedException {
+//        service.tearDown();
+//    }
 
 
 

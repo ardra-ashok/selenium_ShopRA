@@ -5,10 +5,11 @@ Feature: Web Login - Automation Practise Website - with valid credentials
     When the user enters valid Credentials to login
       | email                    | password |
       | test1249@test.com        | PKR@PKR  |
+      | testemailardra@gmail.com | PKR@PKR  |
     And hits submit button
     Then the user found the success text
     Then the user clicks on logout
-    Then user then closes the browser
+#    Then user then closes the browser
 
 
 #  Scenario for credentials class
