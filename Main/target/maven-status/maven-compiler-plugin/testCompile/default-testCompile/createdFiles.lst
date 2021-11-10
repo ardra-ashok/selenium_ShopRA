@@ -1,7 +1,8 @@
+Runners\CucumberFromTestNG.class
 Runners\Run.class
-StepDefinitions\Credentials.class
 Runners\TestNGRunner.class
+Runners\CucumberParams.class
+Runners\testNGCucumberRunner.class
 StepDefinitions\Steps.class
-Runners\dataProviderRepo.class
-Runners\testNGTrial.class
-StepDefinitions\Steps1.class
+Runners\dataProvider.class
+Runners\CucumberTestNGRunner.class

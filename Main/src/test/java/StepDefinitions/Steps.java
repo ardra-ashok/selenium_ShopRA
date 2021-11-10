@@ -1,42 +1,67 @@
 package StepDefinitions;
 
+import Exceptions.ParentException;
+
+import Service.Services;
+
+
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Steps {
 
-    @Given("the user is on login page")
-    public void the_user_is_on_login_page() {
-        System.out.println("one");
+import java.util.List;
+import java.util.Map;
+import static org.testng.Assert.assertEquals;
+
+public class Steps {
+    private Services service;
+
+    public Steps() {
+        service = new Services();
+
     }
-    @When("the user enters valid credentials")
-    public void the_user_enters_valid_credentials() {
-        System.out.println("two");
+
+    @Given("^the user is on the Home Page$")
+    public void userOnHomePage() throws ParentException {
+        service.navigateToHome_page();
     }
-    @When("hits submit")
-    public void hits_submit() {
-        System.out.println("three");
+    @Then("^follow the Sign in Link$")
+    public void goSignInPage() throws ParentException {
+        service.clickOnSignLink();
     }
-    @Then("the user should be logged successfully")
-    public void logInSuccess() {
-        System.out.println("four");
+    @When("^the user enters valid Credentials to login$")
+    public void entersValidCredentials(DataTable userCredentials) throws ParentException {
+            List<Map<String, String>> data = userCredentials.asMaps(String.class, String.class);
+            service.enterLoginCredentials(data.get(0).get("email"), data.get(0).get("password"));
+            // list of maps
+//        for(Map<String,String> data: usercredentials.asMaps(String.class,String.class)){
+//            service.enterLoginCredentials(data.get("email"),data.get("password"));
+//        }
     }
-    @Given("the user is in login page")
-    public void userOnLogin(){
-        System.out.println("five");
+
+    @When("^hits submit button$")
+    public void hitSubmit() throws ParentException {
+        service.submitLogin();
     }
-    @When("the user enters invalid credentials")
-    public void the_user_enters_invalid_credentials() {
-        System.out.println("six");
+    @Then("^the user found the success text$")
+    public void userLoginSuccessful() throws ParentException {
+        boolean loggedIn = service.isLoggedIn();
+        assertEquals(loggedIn, true);
     }
-    @When("hits submit button")
-    public void hits_submitBtn() {
-        System.out.println("seven");
+    @Then("^the user clicks on logout$")
+    public void logOut() throws ParentException {
+        service.clickOnLogout();
+        System.out.println("i am running cucumber");
     }
-    @Then("the user not logged in successfully")
-    public void logNotSuccessful() {
-        System.out.println("eight");
+
+    @Then("^user then closes the browser$")
+    public void tearDown() throws InterruptedException {
+        service.tearDown();
     }
+
+
+
 
 }

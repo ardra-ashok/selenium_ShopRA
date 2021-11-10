@@ -1,0 +1,156 @@
+# Created at 2021-11-09T12:47:13.554
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:398)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+
+# Created at 2021-11-09T12:47:17.842
+Unexpected IOException with stream: Nov 09, 2021 12:47:17 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+# Created at 2021-11-09T12:47:24.926
+Unexpected IOException with stream:   [32mGiven [0m[32mthe user is on the Home Page[0m                          [90m# StepDefinitions.Steps.userOnHomePage()[0m
+
+
+# Created at 2021-11-09T12:47:28.980
+Unexpected IOException with stream:   [32mThen [0m[32mfollow the Sign in Link[0m                                [90m# StepDefinitions.Steps.goSignInPage()[0m
+
+
+# Created at 2021-11-09T12:47:30.432
+Unexpected IOException with stream:   [32mWhen [0m[32mthe user enters valid Credentials to login[0m             [90m# StepDefinitions.Steps.entersValidCredentials(io.cucumber.datatable.DataTable)[0m
+
+
+# Created at 2021-11-09T12:47:30.442
+Unexpected IOException with stream:     
+
+# Created at 2021-11-09T12:47:30.445
+Unexpected IOException with stream: | 
+
+# Created at 2021-11-09T12:47:30.449
+Unexpected IOException with stream: email
+
+# Created at 2021-11-09T12:47:30.455
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.457
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.459
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.462
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.464
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.473
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.475
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.478
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.480
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.483
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.487
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.490
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.492
+Unexpected IOException with stream:  | 
+
+# Created at 2021-11-09T12:47:30.494
+Unexpected IOException with stream: password
+
+# Created at 2021-11-09T12:47:30.497
+Unexpected IOException with stream:  |
+
+# Created at 2021-11-09T12:47:30.502
+Unexpected IOException with stream: 
+
+
+# Created at 2021-11-09T12:47:30.508
+Unexpected IOException with stream:     
+
+# Created at 2021-11-09T12:47:30.511
+Unexpected IOException with stream: | 
+
+# Created at 2021-11-09T12:47:30.513
+Unexpected IOException with stream: test1249@test.com
+
+# Created at 2021-11-09T12:47:30.521
+Unexpected IOException with stream:  | 
+
+# Created at 2021-11-09T12:47:30.525
+Unexpected IOException with stream: PKR@PKR
+
+# Created at 2021-11-09T12:47:30.529
+Unexpected IOException with stream:  
+
+# Created at 2021-11-09T12:47:30.554
+Unexpected IOException with stream:  |
+
+# Created at 2021-11-09T12:47:30.556
+Unexpected IOException with stream: 
+
+
+# Created at 2021-11-09T12:47:33.488
+Unexpected IOException with stream:   [32mAnd [0m[32mhits submit button[0m                                      [90m# StepDefinitions.Steps.hitSubmit()[0m
+
+
+# Created at 2021-11-09T12:47:33.721
+Unexpected IOException with stream:   [32mThen [0m[32mthe user found the success text[0m                        [90m# StepDefinitions.Steps.userLoginSuccessful()[0m
+
+
+# Created at 2021-11-09T12:47:37.230
+Unexpected IOException with stream: i am running cucumber
+
+
+# Created at 2021-11-09T12:47:37.232
+Unexpected IOException with stream:   [32mThen [0m[32mthe user clicks on logout[0m                              [90m# StepDefinitions.Steps.logOut()[0m
+
+
+# Created at 2021-11-09T12:47:42.486
+Unexpected IOException with stream:   [32mThen [0m[32muser then closes the browser[0m                           [90m# StepDefinitions.Steps.tearDown()[0m
+
+
+# Created at 2021-11-09T12:47:42.500
+Unexpected IOException: 6,1,Runners.CucumberTestNGRunner,runScenario(Runners.CucumberTestNGRunner),null,null,null
+
+
+# Created at 2021-11-09T12:47:42.742
+Unexpected IOException with stream: [32m[1m?????????????????????????????????????????????????????????????????????????????????????[0m
+[32m[1m?[0m Share your Cucumber Report with your team at [36m[1m[4mhttps://reports.cucumber.io[0m          [32m[1m?[0m
+[32m[1m?[0m Activate publishing with one of the following:                                    [32m[1m?[0m
+[32m[1m?[0m                                                                                   [32m[1m?[0m
+[32m[1m?[0m src/test/resources/cucumber.properties:          [36mcucumber.publish.enabled[0m=[36mtrue[0m    [32m[1m?[0m
+[32m[1m?[0m src/test/resources/junit-platform.properties:    [36mcucumber.publish.enabled[0m=[36mtrue[0m    [32m[1m?[0m
+[32m[1m?[0m Environment variable:                            [36mCUCUMBER_PUBLISH_ENABLED[0m=[36mtrue[0m    [32m[1m?[0m
+[32m[1m?[0m JUnit:                                           [36m@CucumberOptions[0m(publish = [36mtrue[0m) [32m[1m?[0m
+[32m[1m?[0m                                                                                   [32m[1m?[0m
+[32m[1m?[0m More information at [36mhttps://cucumber.io/docs/cucumber/environment-variables/[0m      [32m[1m?[0m
+[32m[1m?[0m                                                                                   [32m[1m?[0m
+[32m[1m?[0m Disable this message with one of the following:                                   [32m[1m?[0m
+[32m[1m?[0m                                                                                   [32m[1m?[0m
+[32m[1m?[0m src/test/resources/cucumber.properties:          [36mcucumber.publish.quiet[0m=[36mtrue[0m      [32m[1m?[0m
+[32m[1m?[0m src/test/resources/junit-platform.properties:    [36mcucumber.publish.quiet[0m=[36mtrue[0m      [32m[1m?[0m
+[32m[1m?????????????????????????????????????????????????????????????????????????????????????[0m
+
+
+# Created at 2021-11-09T12:47:43.114
+Unexpected IOException: 2,1,org.apache.maven.surefire.testng.TestNGXmlTestSuite,TestSuite,null,null,null
+
+
