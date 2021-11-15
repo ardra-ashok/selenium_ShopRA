@@ -1,7 +1,9 @@
-C:\Users\aashok\intellij\seleniumShop\Main\src\test\java\StepDefinitions\Steps.java
-C:\Users\aashok\intellij\seleniumShop\Main\src\test\java\Runners\Run.java
-C:\Users\aashok\intellij\seleniumShop\Main\src\test\java\Runners\CucumberTestNGRunner.java
-C:\Users\aashok\intellij\seleniumShop\Main\src\test\java\Runners\CucumberFromTestNG.java
-C:\Users\aashok\intellij\seleniumShop\Main\src\test\java\Runners\testNGCucumberRunner.java
-C:\Users\aashok\intellij\seleniumShop\Main\src\test\java\Runners\TestNGRunner.java
-C:\Users\aashok\intellij\seleniumShop\Main\src\test\java\Runners\dataProvider.java
+C:\Users\aashok\intellij\newfolder\selenium_Shop\Main\src\test\java\Runners\cucumberDataProvider.java
+C:\Users\aashok\intellij\newfolder\selenium_Shop\Main\src\test\java\Runners\Run.java
+C:\Users\aashok\intellij\newfolder\selenium_Shop\Main\src\test\java\StepDefs\Steps.java
+C:\Users\aashok\intellij\newfolder\selenium_Shop\Main\src\test\java\StepDefinitions\Steps.java
+C:\Users\aashok\intellij\newfolder\selenium_Shop\Main\src\test\java\Runners\CucumberParams.java
+C:\Users\aashok\intellij\newfolder\selenium_Shop\Main\src\test\java\Runners\CucumberFromTestNG.java
+C:\Users\aashok\intellij\newfolder\selenium_Shop\Main\src\test\java\Runners\testNGCucumberRunner.java
+C:\Users\aashok\intellij\newfolder\selenium_Shop\Main\src\test\java\Runners\TestNGRunner.java
+C:\Users\aashok\intellij\newfolder\selenium_Shop\Main\src\test\java\Runners\dataProvider.java

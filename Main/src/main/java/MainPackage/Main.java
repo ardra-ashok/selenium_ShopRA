@@ -6,8 +6,6 @@ import Exceptions.ParentException;
 
 import Handler.LogHandler;
 import Service.Services;
-
-import java.io.IOException;
 //shop module - service class (page classes)- refer framework architecture
 //couple of more services inside utilities(read to file,write to file)-file handler(independent classes)
 // -  report handling (independent class) public static

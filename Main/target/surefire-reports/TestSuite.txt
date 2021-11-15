@@ -1,4 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 78.157 s - in TestSuite
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 2.349 s <<< FAILURE! - in TestSuite
+runCucumberForTestNG(Runners.cucumberDataProvider)  Time elapsed: 0.404 s  <<< FAILURE!
+cucumber.runtime.CucumberException: java.lang.ExceptionInInitializerError
+	at Runners.cucumberDataProvider.runCucumberForTestNG(cucumberDataProvider.java:36)
+Caused by: java.lang.ExceptionInInitializerError
+	at Runners.cucumberDataProvider.runCucumberForTestNG(cucumberDataProvider.java:36)
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private final java.util.Comparator java.util.TreeMap.comparator accessible: module java.base does not "opens java.util" to unnamed module @80ec1f8
+	at Runners.cucumberDataProvider.runCucumberForTestNG(cucumberDataProvider.java:36)
+
+runCucumberForTestNG(Runners.cucumberDataProvider)  Time elapsed: 0.016 s  <<< FAILURE!
+cucumber.runtime.CucumberException: java.lang.NoClassDefFoundError: Could not initialize class cucumber.deps.com.thoughtworks.xstream.converters.collections.TreeMapConverter
+	at Runners.cucumberDataProvider.runCucumberForTestNG(cucumberDataProvider.java:36)
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class cucumber.deps.com.thoughtworks.xstream.converters.collections.TreeMapConverter
+	at Runners.cucumberDataProvider.runCucumberForTestNG(cucumberDataProvider.java:36)
+

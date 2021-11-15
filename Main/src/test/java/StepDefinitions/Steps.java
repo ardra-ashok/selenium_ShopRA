@@ -2,6 +2,7 @@ package StepDefinitions;
 
 import Exceptions.ParentException;
 
+
 import Service.Services;
 
 
@@ -35,7 +36,6 @@ public class Steps {
     }
     @When("^the user enters valid Credentials to login$")
     public void entersValidCredentials(DataTable userCredentials) throws ParentException {
-        System.out.println("i am here");
             List<Map<String, String>> data = userCredentials.asMaps(String.class, String.class);
             service.enterLoginCredentials(data.get(0).get("email"), data.get(0).get("password"));
 //            // list of maps
@@ -59,10 +59,10 @@ public class Steps {
         System.out.println("i am running cucumber");
     }
 
-//    @Then("^user then closes the browser$")
-//    public void tearDown() throws InterruptedException {
-//        service.tearDown();
-//    }
+    @Then("^user then closes the browser$")
+    public void tearDown() throws InterruptedException {
+        service.tearDown();
+    }
 
 
 

@@ -5,7 +5,7 @@ import Handler.FileHandler;
 import org.testng.annotations.DataProvider;
 
 public class dataProvider {
-    private static String filePath = "C:\\Users\\61491\\intellij\\selenium_Shop\\tempfiles\\Credentials.txt";
+    private static String filePath = "C:\\Users\\aashok\\intellij\\newfolder\\selenium_Shop\\tempfiles\\Credentials.txt";
 
 
     @DataProvider(name="LogData")
