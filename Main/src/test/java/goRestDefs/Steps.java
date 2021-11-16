@@ -1,4 +1,4 @@
-package restAssuredStepDefs;
+package goRestDefs;
 
 
 

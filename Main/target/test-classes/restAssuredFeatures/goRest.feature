@@ -1,16 +1,15 @@
 
 Feature: I am testing get, put, post and delete request for Go Rest API
-#  Scenario: Get request to fetch all users
-#    Given Go rest API is up and running
-#    When I hit the api with get request and end point as "/public/v1/users"
-#    Then API should return all the users
+  Scenario: Get request to fetch all users
+    Given Go rest API is up and running
+    When I hit the api with get request and end point as "/public/v1/users"
+    Then API should return all the users
 #
-#
-#  Scenario: Get request to fetch single User
-#    Given Go rest API is up and running
-#    When I hit the api with get request and end point as "/public/v1/users/11"
-#    Then API should return user details of user id "11"
-#
+  Scenario: Get request to fetch single User
+    Given Go rest API is up and running
+    When I hit the api with get request and end point as "/public/v1/users/11"
+    Then API should return user details of user id "11"
+
 #  Scenario: API should get response status code as 404 for incorrect user
 #    Given Go rest API is up and running
 #    When I hit the api with get request and end point as "/public/v1/users/6453453555353535353453"

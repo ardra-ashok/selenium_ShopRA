@@ -1,7 +1,6 @@
 package restAssured;
 
 
-import Handler.ApiHandler;
 import io.restassured.response.Response;
 
 
@@ -25,9 +24,8 @@ public class RestAssuredClass {
 
     public void getRestApiUpRunning(){
        //  ApiHandler.get(RestObjects.url,RestObjects.accessToken);
-//        req_spec =  given().baseUri(RestObjects.url).auth().oauth2(RestObjects.accessToken)
-//                .when().get("")
-//                .then().assertThat();
+        req_spec =  given().baseUri(RestObjects.url).auth().oauth2(RestObjects.accessToken);
+
 
     }
     public void hitEndpointGet(String endPoint){
@@ -82,7 +80,7 @@ public class RestAssuredClass {
     public void newUserCheckInSystem(){
         valid_response
                 .assertThat()
-                .statusCode(201)
+                .statusCode(301)
                 .body("meta", equalTo(null))
                 .body("data.name", equalTo("steven"))
                 .body("data.gender", equalTo("male"))
