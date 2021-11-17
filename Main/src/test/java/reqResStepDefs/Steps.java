@@ -2,39 +2,54 @@ package reqResStepDefs;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import restAssuredService.reqResService;
+import restAssuredService.reqResServices;
 
-import java.util.List;
+import java.util.Map;
 
 public class Steps {
 
-    @Given("^reqRes API as the rest API$")
+    public static String body;
+
+    @Given("^reqRes API as the test rest API$")
     public void setAPI(){
-       reqResService.setAPI();
+       reqResServices.setAPI();
     }
 
-    @When("^I hit the api with get request and end point as \"([^\"]*)\",API returns all the users$")
-    public void ApiReturnAllUsers(String endPoint) throws Throwable {
-        reqResService.getAllUsers(endPoint);
+    @When("^I want to \"([^\"]*)\" details of the user from \"([^\"]*)\"$")
+    public void handleGetRequest(String method,String endPoint) {
+        reqResServices.handleRequest(method,endPoint,"");
     }
 
-    @When("^I hit the api with get request and end point as \"([^\"]*)\",API returns single user with id as <(\\d+)>$")
-    public void ApiReturnUserMatchingId(String endPoint,int id){
-        reqResService.getUserMatchingId(endPoint,id);
-    }
-    @When("^I hit the api with get request and end point as \"([^\"]*)\",and select page <(\\d+)>$")
-    public void ApiReturnSinglePageData(String endPoint,int pageId){
-        reqResService.getSinglePageData(endPoint,pageId);
+    @Then("^I should get the response for \"([^\"]*)\" from Api$")
+    public void ApiResponse(String method){
+        reqResServices.checkApiResponse(method);
     }
 
-    @When("^I hit the api with get request and end point as \"([^\"]*)\",API should return user not found response for wrong id$")
-    public void ApiReturningErrorResponse(String endPoint){
-        reqResService.getErrorResponseForWrongUser(endPoint);
+    @When("^I want to \"([^\"]*)\" user from \"([^\"]*)\"$")
+    public void handleDeleteRequest(String method,String endPoint) {
+        reqResServices.handleRequest(method,endPoint,"");
     }
 
-    @When("^I hit the api with \"([^\"]*)\" with the following data$")
-    public void AddUpdateOrEditUserDetailsOnApi(String method){
-        reqResService.addUpdateOrEditUser(method);
+    @When("^I want to \"([^\"]*)\" users to \"([^\"]*)\"$")
+    public void handlePostRequest(String method, String endPoint,DataTable userDetails) {
+        for(Map<String, String> data: userDetails.asMaps(String.class,String.class)){
+            body = reqResServices.convertJson(data);
+            reqResServices.handleRequest(method,endPoint,body);
+        }
+
+
     }
+    @When("^I want to \"([^\"]*)\" user details in \"([^\"]*)\"$")
+    public void i_want_to_user_details_in(String method, String endPoint,DataTable userDetails) throws Throwable {
+        for(Map<String, String> data: userDetails.asMaps(String.class,String.class)){
+            body = reqResServices.convertJson(data);
+            reqResServices.handleRequest(method,endPoint,body);
+        }
+    }
+
+
+
+
 }

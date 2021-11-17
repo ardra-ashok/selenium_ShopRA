@@ -16,15 +16,15 @@ Feature: I am testing get, put, post and delete request for Regres Api
 #    When I hit the api with get request and end point as "/api/users/24",API should return user not found response for wrong id
 
 
-#  Scenario: API should post the data
-#    Given reqRes API as the rest API
-#    When I hit the api with "post" with the following data
-
-#  Scenario: API should "patch" the data
-#    Given reqRes API as the rest API
-#    When I hit the api with "patch" with the following data
-
-  Scenario: API should post, put, and patch the data according to the Selection
+  Scenario: API should post the data
     Given reqRes API as the rest API
     When I hit the api with "post" with the following data
-      | url_params | parameter_value |
+
+##  Scenario: API should patch the data
+##    Given reqRes API as the rest API
+##    When I hit the api with "patch" with the following data
+#
+#  Scenario: API should post, put, and patch the data according to the Selection
+#    Given reqRes API as the rest API
+#    When I hit the api with "post" with the following data
+#      | url_params | parameter_value |

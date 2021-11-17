@@ -1,7 +1,7 @@
 package restAssuredService;
 
 import Handler.ApiHandler;
-import cucumber.api.DataTable;
+
 
 public class reqResService {
 

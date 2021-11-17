@@ -15,25 +15,16 @@ Feature: I am testing get, put, post and delete request for Regres Api
 #    Given reqRes API as the rest API
 #    When I hit the api with get request and end point as "/api/users/24",API should return user not found response for wrong id
 
-#  Scenario: API should post, put, and patch the data according to the Selection
-#    Given reqRes API as the rest API
-#    When I hit the api with "post" with the following data
-#      | url_param      |  | parameter_value           |
-#      | {"name","job"} |  | { "mira","tech-support" } |
-#  Then API should add the details to the system
 
-#  Scenario: API should post, put, and patch the data according to the Selection
-#    Given reqRes API as the rest API
-#    When I hit the api with "post" with the following data
-
-#  Scenario: API should post, put, and patch the data according to the Selection
-#    Given reqRes API as the rest API
-#    When I hit the api with "patch" with the following data
-
-  Scenario: API should post, put, and patch the data according to the Selection
+  Scenario: API should post the data
     Given reqRes API as the rest API
-    When I hit the api with  with the following data
-      | request | values                                  | endPoint            |
-      | post    | { "name":"mira","job":"tech-support" }  | /api/users/create   |
-      | put     | { "name":"steven","job":"it-support" }  | /api/users/update/1 |
-      | patch   | { "name":"steve","job":"tech-support" } | /api/users/update/1 |
+    When I hit the api with "post" with the following data
+
+##  Scenario: API should patch the data
+##    Given reqRes API as the rest API
+##    When I hit the api with "patch" with the following data
+#
+#  Scenario: API should post, put, and patch the data according to the Selection
+#    Given reqRes API as the rest API
+#    When I hit the api with "post" with the following data
+#      | url_params | parameter_value |
