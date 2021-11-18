@@ -25,3 +25,11 @@ Feature: I am testing get, put, post and delete request for reqres Api
       | 1  | georg.bluth@reqres.in |
       | 2  | jane.weaver@reqres.in |
     Then I should get the response for "EDIT" from Api
+
+  Scenario: Get request to get single user details
+    When I want to get user details from "/api/users"
+      | id |
+      | 1  |
+      | 2  |
+    Then I should get the response for "GET" from Api
+

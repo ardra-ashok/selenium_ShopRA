@@ -9,7 +9,6 @@ import static org.hamcrest.Matchers.*;
 public class ApiHandler {
 
     public static  ValidatableResponse valid_response;
-    public static String path;
 
     public static void setRestAPI(){
         RestAssured.baseURI = "https://reqres.in";

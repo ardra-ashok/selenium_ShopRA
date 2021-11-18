@@ -35,7 +35,7 @@ public class reqResApiHandler {
                         break;
             case "DELETE": response = req_spec.when().delete(endPoint);
                             break;
-            default: System.out.println("Wrong" +method);
+            default: System.out.println("Wrong " +method);
         }
         System.out.println(response.asString());
 
@@ -54,8 +54,13 @@ public class reqResApiHandler {
                         break;
             case "EDIT": valid_response.assertThat().statusCode(200);
                         break;
-            default: System.out.println("Wrong" +method);
+            default: System.out.println("Wrong " +method);
         }
 
+    }
+
+    public static Response handleSingleGetRequest(String endPoint, String id) {
+        response = RestAssured.given().log().all().queryParam("id",id).when().get(endPoint);
+        return response;
     }
 }
