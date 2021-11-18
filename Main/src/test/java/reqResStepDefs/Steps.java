@@ -12,9 +12,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Steps {
+    //change the endpoint to somewhere else
 
-    public static String body;
-    public static String id;
 
     @Given("^reqRes API as the test rest API$")
     public void setAPI(){
@@ -39,7 +38,7 @@ public class Steps {
     @When("^I want to \"([^\"]*)\" users to \"([^\"]*)\"$")
     public void handlePostRequest(String method, String endPoint,DataTable userDetails) {
         for(Map<String, String> data: userDetails.asMaps(String.class,String.class)){
-            body = reqResServices.convertJson(data);
+            String body = reqResServices.convertJson(data);
             reqResServices.handleRequest(method,endPoint,body);
         }
 
@@ -48,7 +47,7 @@ public class Steps {
     @When("^I want to \"([^\"]*)\" user details in \"([^\"]*)\"$")
     public void handlePutRequest(String method, String endPoint,DataTable userDetails)  {
         for(Map<String, String> data: userDetails.asMaps(String.class,String.class)){
-            body = reqResServices.convertJson(data);
+            String body = reqResServices.convertJson(data);
             reqResServices.handleRequest(method,endPoint,body);
         }
     }
@@ -62,7 +61,7 @@ public class Steps {
 
     @When("^I want to \"([^\"]*)\" users in \"([^\"]*)\"$")
     public void addUserDataProvider(String method, String endPoint)  {
-            body = reqResServices.convertJson(CucsParams.dataMap);
+            String body = reqResServices.convertJson(CucsParams.dataMap);
             reqResServices.handleRequest(method, endPoint, body);
 
     }

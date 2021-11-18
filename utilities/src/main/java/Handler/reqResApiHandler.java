@@ -1,6 +1,7 @@
 package Handler;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
@@ -26,6 +27,7 @@ public class reqResApiHandler {
 
         req_spec = RestAssured.given().log().all();
         req_spec.header("Content-type", "application/json");
+        req_spec.contentType(ContentType.JSON);
         switch(method){
             case "GET": response = req_spec.when().get(endPoint);
                         break;
@@ -44,7 +46,7 @@ public class reqResApiHandler {
     public static void checkApiResponse(String method) {
         valid_response = response.then();
 
-        switch (method){
+        switch(method){
             case "GET": valid_response.assertThat().statusCode(200).body("data",not(emptyArray()));
 //                        .body("page",equalTo(1));
                         break;

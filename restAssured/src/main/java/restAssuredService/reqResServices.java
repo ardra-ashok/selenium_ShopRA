@@ -17,7 +17,6 @@ public class reqResServices {
 
     public static void checkApiResponse(String method) {
         reqResApiHandler.checkApiResponse(method);
-
     }
 
 
