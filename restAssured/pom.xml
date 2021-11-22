@@ -10,6 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>restAssured</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>untitled</module>
+        <module>learnings</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

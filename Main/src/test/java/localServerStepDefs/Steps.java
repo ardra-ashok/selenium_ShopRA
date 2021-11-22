@@ -3,13 +3,17 @@ package localServerStepDefs;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import io.restassured.response.Response;
+import org.testng.Assert;
 import restAssuredService.localService;
 
 
-import java.util.HashMap;
+
 import java.util.Map;
 
 public class Steps {
+
 
 
     @Given("^I set the environment to local server$")
@@ -19,14 +23,30 @@ public class Steps {
     }
 
     @Then("^I send a \"([^\"]*)\" API request with the following data$")
-    public void handleRequest(String endPoint, DataTable posts)  {
-        String urlEndPoint = localService.setRequest(endPoint,posts);
-        for(Map<String, String> data: posts.asMaps(String.class,String.class)){
-            HashMap<String, String> body = localService.getBody(data);
-            String ResponseCode = localService.getResponseCode(data);
-            String bodyData = localService.convertJson(body);
-            localService.handleRequest(endPoint,urlEndPoint,bodyData,ResponseCode);
-        }
+    public void handlePostRequest(String method, Map<String,String> data)  {
+        // move the next line to service
 
+        Response response = localService.handlePostRequest(method,data);
+        Assert.assertEquals(response.path("title"),data.get("title"));
     }
+
+    @Then("^I send a create post request with the following data to perform \"([^\"]*)\" Api request,and get gave a Not Found$")
+    public void handleDeletePost(String method, Map<String,String> data)  {
+        // move the next line to service
+
+        Response response = localService.handleDeleteRequest(method,data);
+        Assert.assertEquals(response.statusCode(),Integer.parseInt(data.get("responseCode")));
+    }
+
+
+//    @Then("^I send a create post API request with the following data, and \"([^\"]*)\" with the updated title$")
+//    public void handlePutRequest(Map<String,String> data)  {
+//        Response response = localService.handlePutRequest(,data);
+//        Assert.assertEquals(response.statusCode(),Integer.parseInt(data.get("responseCode")));
+//    }
+
+
+
+
+
 }
