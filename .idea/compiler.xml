@@ -7,9 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Website1" />
+        <module name="OpalWebsite" />
         <module name="utilities" />
-        <module name="restAssured" />
         <module name="Main" />
+        <module name="DB" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

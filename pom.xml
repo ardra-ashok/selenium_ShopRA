@@ -13,6 +13,8 @@
         <module>Main</module>
         <module>Website1</module>
         <module>restAssured</module>
+        <module>OpalWebsite</module>
+        <module>DB</module>
     </modules>
     <dependencies>
         <dependency>
@@ -25,6 +27,11 @@
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-core</artifactId>
             <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbutils</groupId>
+            <artifactId>commons-dbutils</artifactId>
+            <version>1.6</version>
         </dependency>
     </dependencies>
 
