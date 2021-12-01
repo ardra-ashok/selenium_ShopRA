@@ -8,10 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Steps {
-    private DBServices dbServices;
 
 
-    public Steps() {}
+
+
+    public Steps(){}
 
 
     @Given("^I set the test environment to \"([^\"]*)\"$")
@@ -31,7 +32,8 @@ public class Steps {
         if (!queryData.get(0).containsKey("OPERATOR") || !queryData.get(0).containsKey("OPERAND"))
             System.out.println("Query data must include [OPERATOR] and [OPERAND]");
 
-        StringBuilder result = dbServices.runParametricDBQuery(queryData);
+        String result = DBServices.runParametricDBQuery(queryData);
+        System.out.println(result);
 
 
     }

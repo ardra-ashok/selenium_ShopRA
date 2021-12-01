@@ -9,11 +9,11 @@ import java.util.Map;
 
 public class DBServices {
 
-    public StringBuilder runParametricDBQuery(List<Map<String, String>> queryData){
-        StringBuilder results = null;
+    public static String runParametricDBQuery(List<Map<String, String>> queryData){
+        String results = null;
         try {
             results = runParametricQuery(queryData);
-            
+
         } catch (Throwable e) {
             System.out.println("Exception while running the parametric query");
         }
@@ -21,7 +21,7 @@ public class DBServices {
 
     }
 
-    public StringBuilder runParametricQuery(List<Map<String, String>> queryData) {
+    public static String runParametricQuery(List<Map<String, String>> queryData) {
         StringBuilder selectStr = new StringBuilder("SELECT ");
         StringBuilder fromStr = new StringBuilder(" FROM ");
         StringBuilder whereStr = new StringBuilder(" WHERE 1=1 ");
@@ -70,7 +70,7 @@ public class DBServices {
             query.append(groupByStr);
 
         ResultSetHandler<List<Map<String, Object>>> resultSetHandler = new MapListHandler();
-        return query;
+        return query.toString();
     }
 
 
